@@ -1,0 +1,50 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(0));
+
+	const int array = 5;
+	int m[array];
+	int  diff_1, diff_2, z, index, i;
+
+	for (int i = 0; i < array; i++) 
+	{
+		m[i]= rand() % 100;
+	}
+	cout << " последовательность: ";
+	for (int i = 0; i < array; i++)
+	{
+		cout <<m[i]<<" ";
+	}
+	for (int i = 0; i < array; i++)
+	{
+
+		int left = 0; 
+		int right = 0;
+		for (int z = i - 1; z >= 0; z--) {
+			left += m[z];
+		}
+
+		for (int z = i + 1; z < array; z++) {
+			right += m[z];
+		}
+		diff_1 = abs(left - right);
+
+		if (i == 0) {
+			diff_2 = diff_1;
+		}
+		if (diff_2 > diff_1) { 
+			index = i; 
+			diff_2 = diff_1; 
+		}
+
+	}
+
+	cout << "\n индекс числа, выполняющего условие = " << index << endl;
+	
+}
