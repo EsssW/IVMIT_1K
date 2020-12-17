@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <conio.h>
+//1.3.3.1. Перестановки.
+const int N = 5;// перестанвоки от 1 до n
+
+void swap(int* a, int* b)
+{
+	int t;
+
+	t = *a;
+	*a = *b;
+	*b = t;
+}
+
+void povorot(int* P, int m)
+{
+	int i = 0, j = m;
+	while (i < j)
+	{
+		swap(&P[i], &P[j]);
+		++i;
+		--j;
+	}
+}
+
+void antilex(int* P, int m)
+{
+	int i;
+	if (m == 0)
+	{
+		for (i = 0; i < N; ++i) printf("%d ", P[i]);
+		printf("\n");
+	}
+	else
+	{
+		for (i = 0; i <= m; ++i){
+			antilex(P, m - 1);
+			if (i < m)
+			{
+				swap(&P[i], &P[m]);
+				povorot(P, m - 1);
+			}
+		}
+	}
+}
+
+int main()
+{
+	int i;
+	int P[N];
+
+	for (i = 0; i < N; ++i)
+		P[i] = i + 1;
+
+	antilex(P, N - 1);
+}
