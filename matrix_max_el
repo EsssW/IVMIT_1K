@@ -1,0 +1,46 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+#define nxn 5 //размер
+
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "Russian");
+	int** a;
+	srand(time(0));
+	a = new int* [nxn];
+	//заполняем массив
+	for (int i = 0; i < nxn; i++) {
+		a[i] = new int[nxn];
+		for (int j = 0; j < nxn; j++)
+			a[i][j] = rand() % 100;
+	}
+	//матрица до замены 
+	cout << "Начальная матрица\n";
+	for (int i = 0; i < nxn; i++) {
+		for (int j = 0; j < nxn; j++)
+			cout << " " << a[i][j] << " ";
+		cout << endl;
+	}
+	//поиск и замена элемнтов 
+	for (int i = 0; i < nxn; i++) {
+		int max = -2;
+		int maxInd = -1;
+		for (int j = 0; j < nxn; j++) {
+			if (a[i][j] > max) {
+				max = a[i][j];
+				maxInd = j;
+			}
+		}
+		a[i][maxInd] = a[i][i];
+		a[i][i] = max;
+	}
+	//вывод
+	cout << "\nМатрица после выполнения действий\n";
+	for (int i = 0; i < nxn; i++) {
+		for (int j = 0; j < nxn; j++)
+			cout << " "<<a[i][j] << " ";
+		cout << endl;
+	}
+}
