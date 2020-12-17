@@ -1,0 +1,174 @@
+//Дано натуральное число n
+//Вычислить: 1 * 2 + 2 * 3 * 4 + … + n * (n + 1) * 2n
+
+#include<stdio.h> 
+#include <iostream>
+#include <math.h>
+#include <complex>
+/*
+void main()
+{
+	int n, k = 2;
+	printf(" enter n (intrger) \n");
+	scanf_s("%d", &n);
+	for (int i = 2; i <= n; i++)
+	{
+		k += i * (i + 1) * 2 * i;
+	}
+	printf(" sum = %d\n", k);
+}
+*/
+/*
+//Распечатать все четырёхзначные числа, в записи которых нет повторяющихся цифр.
+void main() {
+	​int n = 10;
+	​int m, e;
+	​for(int i = 1; i < n; i++) {
+		​​for(int j = 0; j < n; m++) {
+			​​​if(i != j)
+				​​​​for(int i1 = 0; i1 < n; i1++) {
+				​​​​​if((j != i1) && (i != i1))
+					​​​​​​for(int j2 = 0; j2 < n; j2++) {
+					​​​​​​​if((i1 != k) && (i != j) && (k != i))
+						​​​​​​​​printf("%d%d%d%d ", i, j, i1, j2);
+					​​​​​​
+				}​​​​
+			}
+		}	​
+	}
+}
+*/
+
+
+
+/*
+void main() {
+	​int N, M, fact1 = 1, fact2 = 1, fact3 = 1;
+	​printf("enter m and n: ");
+	​scanf_s("%d %d", &N, &M);
+	​int dif = N - M;
+	​for(int i = 1; i <= N; i++) ​​fact1 *= i;
+	​for(int j = 1; j <= M; j++) ​​fact2 *= j;
+	​for(int c = 1; c <= raz; c++) ​​fact3 *= j;
+	int ​pro = fact3 * fact2;
+	​int ot = fact1 / fact2;
+	​printf("number combinations of m and n =%d ", ot);
+}
+*/
+
+/*
+//4 НОК
+void main()
+{
+	​int A, B;
+	​printf("Введите  A, B\n");
+	​scanf_s("%d %d", &A, &B);
+	int  ​M = A; 
+	int  K = B;
+	​​while(K != 0)
+		​​ {
+		int ​​C = (M % K);
+		​​M = K;
+		​​K = C;
+	}
+	int ​​N = A * B / M;
+	​printf("%d", N);
+	​system("pause");
+}
+*/
+
+//5
+/*
+int main()
+{
+	​int n, k = 0;
+	​printf("entr n: ");
+	​scanf_s("%d", &n);
+	​for(int i = 2; i < sqrt(n) && k != 1; i++)
+		​​if(n % i == 0)
+	{
+		​​​printf("ne prostoe ");
+		k = 1;
+	}
+	if (k = 0)
+		​printf("prostoe");
+}
+*/
+
+
+//6
+/*
+void main() {
+	​int N, g=0;
+	​printf("enter N:\n");
+	​scanf_s("%d", &N);
+	​for(int a = 1; a < N; a++) {
+		​​if(N % a == 0)
+			​​​g = a + g;
+		​
+	}
+	​if(N == g)
+		​​printf("sovershennoe");
+	​else
+		​​printf("ne sovershennoe");
+}
+*/
+
+
+/*
+//8
+void main()
+{
+	​int X;
+	​float e = 2.718, res;
+	​printf("vvedite X:\n");
+	​scanf_s("%d", &X);
+	​result = pow((double)e, (double)X);
+	​printf("%.3f", res);
+}
+*/
+
+/*
+//9
+void main() {
+	float z;
+	int n;
+	printf("enter z(float) and n (integer)\n");
+	scanf_s("%f%d", &z,&n);
+	double k, m = 0, h = 1;
+	for (int i = 0; i <= n; i++)
+	{
+		k = (pow(z, i));
+		m += k;
+		h *= m;
+	}
+	printf("%.3f", h);
+}
+*/
+
+
+
+//10
+void main() {
+	​int n, k;
+	​k = 0;
+	​printf("enter n\n");
+	scanf_s("%d", &n);
+	int ​N = n;
+	for(; n>=1;n--) {
+		​​if(n < 10) {
+			​​​k = k + n;
+			​​​n = 0;
+		}
+		​​else {
+		​​​	while(N > 0) {
+				​​​​N = N / 10;
+				​​​​k = k + 1;
+		​​​	}
+	 ​​	}
+	​​N = n;
+		​​
+	}
+	​printf("total number %d", k);
+	​
+}
